@@ -4,11 +4,11 @@
 //  mworkingHaier
 //
 //  Created by Saborka on 26/12/2016.
-//  Copyright © 2016 CaiGaoBaDou. All rights reserved.
+//  https://github.com/Saborka/CustomGraphView
 //
 
 #import "GraphPopView.h"
-#import "UIView+mySize.h"
+#import "header.h"
 
 static CGFloat const popHeight = 25;
 
@@ -41,7 +41,7 @@ static CGFloat const popHeight = 25;
     self.layer.masksToBounds = YES;
     self.layer.cornerRadius = popHeight / 2;
     
-    CGFloat width = [self getWidthWithString:_numberString withSize:CGSizeMake([UIScreen mainScreen].bounds.size.width, popHeight) font:[UIFont fontWithName:@"PingFangSC-Regular" size:12]];
+    CGFloat width = [self getWidthWithString:_numberString withSize:CGSizeMake(MainScreenWidth , popHeight) font:[UIFont fontWithName:@"PingFangSC-Regular" size:12]];
     self.width = width + 20;
     self.height = popHeight;
     [self addSubview:self.numberLabel];

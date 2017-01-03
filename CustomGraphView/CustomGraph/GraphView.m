@@ -4,7 +4,7 @@
 //  mworkingHaier
 //
 //  Created by Saborka on 26/12/2016.
-//  Copyright © 2016 CaiGaoBaDou. All rights reserved.
+//  https://github.com/Saborka/CustomGraphView
 //
 
 #import "GraphView.h"

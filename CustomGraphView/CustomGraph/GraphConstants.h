@@ -3,7 +3,7 @@
 //  mworkingHaier
 //
 //  Created by Saborka on 27/12/2016.
-//  Copyright © 2016 CaiGaoBaDou. All rights reserved.
+//  Chttps://github.com/Saborka/CustomGraphView
 //
 
 #ifndef GraphConstants_h

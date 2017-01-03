@@ -4,7 +4,7 @@
 //  CustomGraphView
 //
 //  Created by Saborka on 3/1/2017.
-//  Copyright © 2017 Saborka. All rights reserved.
+//  https://github.com/Saborka/CustomGraphView
 //
 
 #import "UIView+mySize.h"

@@ -3,10 +3,11 @@
 //  mworkingHaier
 //
 //  Created by Saborka on 27/12/2016.
-//  Copyright © 2016 CaiGaoBaDou. All rights reserved.
+//  https://github.com/Saborka/CustomGraphView
 //
 
 #import "GraphBar.h"
+#import "header.h"
 
 @interface GraphBar ()
 
@@ -43,8 +44,8 @@
     _barValue = barValue;
     
     UIBezierPath *barLine = [UIBezierPath bezierPath];
-    [barLine moveToPoint:CGPointMake(self.frame.size.width/2.0, self.frame.size.height)];
-    [barLine addLineToPoint:CGPointMake(self.frame.size.width/2.0, (1 - barValue) * self.frame.size.height)];
+    [barLine moveToPoint:CGPointMake(self.width/2.0, self.height)];
+    [barLine addLineToPoint:CGPointMake(self.width/2.0, (1 - barValue) * self.height)];
     
     [barLine setLineWidth:1.0];
     [barLine setLineCapStyle:kCGLineCapSquare];
