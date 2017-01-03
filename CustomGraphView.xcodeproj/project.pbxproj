@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		145888A11E1B99CE005AF5FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888A01E1B99CE005AF5FC /* main.m */; };
 		145888A41E1B99CE005AF5FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888A31E1B99CE005AF5FC /* AppDelegate.m */; };
-		145888A71E1B99CE005AF5FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888A61E1B99CE005AF5FC /* ViewController.m */; };
-		145888AA1E1B99CE005AF5FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145888A81E1B99CE005AF5FC /* Main.storyboard */; };
 		145888AC1E1B99CE005AF5FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 145888AB1E1B99CE005AF5FC /* Assets.xcassets */; };
 		145888AF1E1B99CE005AF5FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 145888AD1E1B99CE005AF5FC /* LaunchScreen.storyboard */; };
+		145888C21E1B99FC005AF5FC /* GraphBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888B81E1B99FC005AF5FC /* GraphBar.m */; };
+		145888C31E1B99FC005AF5FC /* GraphDot.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888BB1E1B99FC005AF5FC /* GraphDot.m */; };
+		145888C41E1B99FC005AF5FC /* GraphLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888BD1E1B99FC005AF5FC /* GraphLine.m */; };
+		145888C51E1B99FC005AF5FC /* GraphPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888BF1E1B99FC005AF5FC /* GraphPopView.m */; };
+		145888C61E1B99FC005AF5FC /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888C11E1B99FC005AF5FC /* GraphView.m */; };
+		145888CA1E1B9A37005AF5FC /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888C81E1B9A37005AF5FC /* RootViewController.m */; };
+		145888CB1E1B9A37005AF5FC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145888C91E1B9A37005AF5FC /* RootViewController.xib */; };
+		145888CE1E1B9D52005AF5FC /* UIView+mySize.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888CD1E1B9D52005AF5FC /* UIView+mySize.m */; };
+		145888D11E1B9E4C005AF5FC /* DashesLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888D01E1B9E4C005AF5FC /* DashesLineView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +27,28 @@
 		145888A01E1B99CE005AF5FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		145888A21E1B99CE005AF5FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		145888A31E1B99CE005AF5FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		145888A51E1B99CE005AF5FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		145888A61E1B99CE005AF5FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		145888A91E1B99CE005AF5FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		145888AB1E1B99CE005AF5FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		145888AE1E1B99CE005AF5FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		145888B01E1B99CE005AF5FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		145888B71E1B99FC005AF5FC /* GraphBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphBar.h; sourceTree = "<group>"; };
+		145888B81E1B99FC005AF5FC /* GraphBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphBar.m; sourceTree = "<group>"; };
+		145888B91E1B99FC005AF5FC /* GraphConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphConstants.h; sourceTree = "<group>"; };
+		145888BA1E1B99FC005AF5FC /* GraphDot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphDot.h; sourceTree = "<group>"; };
+		145888BB1E1B99FC005AF5FC /* GraphDot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphDot.m; sourceTree = "<group>"; };
+		145888BC1E1B99FC005AF5FC /* GraphLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphLine.h; sourceTree = "<group>"; };
+		145888BD1E1B99FC005AF5FC /* GraphLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphLine.m; sourceTree = "<group>"; };
+		145888BE1E1B99FC005AF5FC /* GraphPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphPopView.h; sourceTree = "<group>"; };
+		145888BF1E1B99FC005AF5FC /* GraphPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphPopView.m; sourceTree = "<group>"; };
+		145888C01E1B99FC005AF5FC /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		145888C11E1B99FC005AF5FC /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
+		145888C71E1B9A37005AF5FC /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		145888C81E1B9A37005AF5FC /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		145888C91E1B9A37005AF5FC /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		145888CC1E1B9D52005AF5FC /* UIView+mySize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+mySize.h"; sourceTree = "<group>"; };
+		145888CD1E1B9D52005AF5FC /* UIView+mySize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+mySize.m"; sourceTree = "<group>"; };
+		145888CF1E1B9E4C005AF5FC /* DashesLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashesLineView.h; sourceTree = "<group>"; };
+		145888D01E1B9E4C005AF5FC /* DashesLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashesLineView.m; sourceTree = "<group>"; };
+		145888D21E1B9F7F005AF5FC /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +81,17 @@
 		1458889E1E1B99CE005AF5FC /* CustomGraphView */ = {
 			isa = PBXGroup;
 			children = (
+				145888B61E1B99FC005AF5FC /* CustomGraph */,
 				145888A21E1B99CE005AF5FC /* AppDelegate.h */,
 				145888A31E1B99CE005AF5FC /* AppDelegate.m */,
-				145888A51E1B99CE005AF5FC /* ViewController.h */,
-				145888A61E1B99CE005AF5FC /* ViewController.m */,
-				145888A81E1B99CE005AF5FC /* Main.storyboard */,
+				145888CF1E1B9E4C005AF5FC /* DashesLineView.h */,
+				145888D01E1B9E4C005AF5FC /* DashesLineView.m */,
+				145888CC1E1B9D52005AF5FC /* UIView+mySize.h */,
+				145888CD1E1B9D52005AF5FC /* UIView+mySize.m */,
+				145888C71E1B9A37005AF5FC /* RootViewController.h */,
+				145888C81E1B9A37005AF5FC /* RootViewController.m */,
+				145888C91E1B9A37005AF5FC /* RootViewController.xib */,
+				145888D21E1B9F7F005AF5FC /* header.h */,
 				145888AB1E1B99CE005AF5FC /* Assets.xcassets */,
 				145888AD1E1B99CE005AF5FC /* LaunchScreen.storyboard */,
 				145888B01E1B99CE005AF5FC /* Info.plist */,
@@ -77,6 +106,24 @@
 				145888A01E1B99CE005AF5FC /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		145888B61E1B99FC005AF5FC /* CustomGraph */ = {
+			isa = PBXGroup;
+			children = (
+				145888B71E1B99FC005AF5FC /* GraphBar.h */,
+				145888B81E1B99FC005AF5FC /* GraphBar.m */,
+				145888B91E1B99FC005AF5FC /* GraphConstants.h */,
+				145888BA1E1B99FC005AF5FC /* GraphDot.h */,
+				145888BB1E1B99FC005AF5FC /* GraphDot.m */,
+				145888BC1E1B99FC005AF5FC /* GraphLine.h */,
+				145888BD1E1B99FC005AF5FC /* GraphLine.m */,
+				145888BE1E1B99FC005AF5FC /* GraphPopView.h */,
+				145888BF1E1B99FC005AF5FC /* GraphPopView.m */,
+				145888C01E1B99FC005AF5FC /* GraphView.h */,
+				145888C11E1B99FC005AF5FC /* GraphView.m */,
+			);
+			path = CustomGraph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +157,7 @@
 				TargetAttributes = {
 					1458889B1E1B99CE005AF5FC = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = EM5VGKG646;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -139,7 +187,7 @@
 			files = (
 				145888AF1E1B99CE005AF5FC /* LaunchScreen.storyboard in Resources */,
 				145888AC1E1B99CE005AF5FC /* Assets.xcassets in Resources */,
-				145888AA1E1B99CE005AF5FC /* Main.storyboard in Resources */,
+				145888CB1E1B9A37005AF5FC /* RootViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,8 +198,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				145888A71E1B99CE005AF5FC /* ViewController.m in Sources */,
+				145888C21E1B99FC005AF5FC /* GraphBar.m in Sources */,
+				145888CE1E1B9D52005AF5FC /* UIView+mySize.m in Sources */,
+				145888C51E1B99FC005AF5FC /* GraphPopView.m in Sources */,
+				145888CA1E1B9A37005AF5FC /* RootViewController.m in Sources */,
+				145888C41E1B99FC005AF5FC /* GraphLine.m in Sources */,
 				145888A41E1B99CE005AF5FC /* AppDelegate.m in Sources */,
+				145888D11E1B9E4C005AF5FC /* DashesLineView.m in Sources */,
+				145888C61E1B99FC005AF5FC /* GraphView.m in Sources */,
+				145888C31E1B99FC005AF5FC /* GraphDot.m in Sources */,
 				145888A11E1B99CE005AF5FC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,14 +214,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		145888A81E1B99CE005AF5FC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				145888A91E1B99CE005AF5FC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		145888AD1E1B99CE005AF5FC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -272,7 +319,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EM5VGKG646;
 				INFOPLIST_FILE = CustomGraphView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.saborka.CustomGraphView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -283,7 +332,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = EM5VGKG646;
 				INFOPLIST_FILE = CustomGraphView/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.saborka.CustomGraphView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
