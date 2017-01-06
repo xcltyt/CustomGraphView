@@ -20,7 +20,7 @@
 		145888CB1E1B9A37005AF5FC /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 145888C91E1B9A37005AF5FC /* RootViewController.xib */; };
 		145888CE1E1B9D52005AF5FC /* UIView+mySize.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888CD1E1B9D52005AF5FC /* UIView+mySize.m */; };
 		145888D11E1B9E4C005AF5FC /* DashesLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = 145888D01E1B9E4C005AF5FC /* DashesLineView.m */; };
-		14F3D0B11E1F3859008F57A8 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14F3D0B01E1F3859008F57A8 /* demo.gif */; };
+		14F3D0B31E1F3CE9008F57A8 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = 14F3D0B21E1F3CE9008F57A8 /* demo.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,7 +50,7 @@
 		145888CF1E1B9E4C005AF5FC /* DashesLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashesLineView.h; sourceTree = "<group>"; };
 		145888D01E1B9E4C005AF5FC /* DashesLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashesLineView.m; sourceTree = "<group>"; };
 		145888D21E1B9F7F005AF5FC /* header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = header.h; sourceTree = "<group>"; };
-		14F3D0B01E1F3859008F57A8 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
+		14F3D0B21E1F3CE9008F57A8 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,7 +132,7 @@
 		145888D31E1BA5B9005AF5FC /* demo */ = {
 			isa = PBXGroup;
 			children = (
-				14F3D0B01E1F3859008F57A8 /* demo.gif */,
+				14F3D0B21E1F3CE9008F57A8 /* demo.gif */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -197,7 +197,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				145888AF1E1B99CE005AF5FC /* LaunchScreen.storyboard in Resources */,
-				14F3D0B11E1F3859008F57A8 /* demo.gif in Resources */,
+				14F3D0B31E1F3CE9008F57A8 /* demo.gif in Resources */,
 				145888AC1E1B99CE005AF5FC /* Assets.xcassets in Resources */,
 				145888CB1E1B9A37005AF5FC /* RootViewController.xib in Resources */,
 			);
