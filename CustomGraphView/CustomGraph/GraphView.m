@@ -4,18 +4,20 @@
 //  mworkingHaier
 //
 //  Created by Saborka on 26/12/2016.
-//  https://github.com/Saborka/CustomGraphView
+//  Copyright © 2016 CaiGaoBaDou. All rights reserved.
 //
 
 #import "GraphView.h"
+#import "header.h"
 #import "DashesLineView.h"
 #import "GraphLine.h"
 #import "GraphConstants.h"
 #import "GraphBar.h"
-#import "header.h"
+#import "GraphDot.h"
+#import "GraphPopView.h"
+#import <math.h>
 
-
-@interface GraphView () <UIScrollViewDelegate, GraphCurrentSelectDelegate>
+@interface GraphView () <UIScrollViewDelegate>
 
 @property (strong, nonatomic) UIScrollView *scrollView;
 /**
@@ -31,14 +33,24 @@
 //X轴底部view
 @property (strong, nonatomic) UIView *bottomView;
 
+@property (assign, nonatomic) NSInteger lastSelectIndex;
 
 @end
 
 @implementation GraphView
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        self.lastSelectIndex = -1;
+    }
+    return self;
+}
+
 - (void)drawGraph
 {
-    self.width = [UIScreen mainScreen].bounds.size.width;
+    self.width = MainScreenWidth;
     self.height = GraphTotalHeight;
     [self addSubview:self.scrollView];
     [self drawGrid];
@@ -46,6 +58,7 @@
     if (_needBar) {
         [self drawBar];
     }
+    [self createTappedCovers];
 }
 
 /**
@@ -141,7 +154,7 @@
 - (GraphLine *)createLineIsTarget:(BOOL)isTarget
 {
     GraphLine *line = [[GraphLine alloc] initWithFrame:CGRectMake(0, 0, self.scrollView.contentSize.width, self.scrollView.contentSize.height - GraphXBottomHeight)];
-    line.delegate = self;
+    //    line.delegate = self;
     line.xScaleLength = self.xScaleLength;
     line.lineWidth = 2;
     line.maxValue = self.yMaxValue;
@@ -170,6 +183,7 @@
         CGFloat targetValue = [[self.targetBarValues objectAtIndex:i] floatValue] / self.yMaxValue;
         targetBar.barValue = targetValue;
         [_scrollView addSubview:targetBar];
+        [_scrollView sendSubviewToBack:targetBar];
     }
     
     for (int i = 0; i < self.actualBarValues.count; i++) {
@@ -178,13 +192,98 @@
         CGFloat actualValue = [[self.actualBarValues objectAtIndex:i] floatValue] / self.yMaxValue;
         actualBar.barValue = actualValue;
         [_scrollView addSubview:actualBar];
+        [_scrollView sendSubviewToBack:actualBar];
     }
 }
 
-//高亮当前的x轴
-- (void)graphLineView:(GraphLine *)graphLine currentSelectIndex:(NSInteger)index
+/**
+ *  分散一个个的可点击区域
+ */
+- (void)createTappedCovers
 {
+    for (int i = 0; i < self.xTitleArray.count; i++) {
+        UIView *cover = [[UIView alloc] init];
+        cover.tag = BaseCoverTag + i;
+        
+        if (i == 0) { //第一个点
+            cover.frame = CGRectMake(0, 0, self.xScaleLength / 2, GraphTotalHeight);
+            [_scrollView addSubview:cover];
+        } else if (i == self.xTitleArray.count - 1) { //最后一个点
+            cover.frame = CGRectMake(self.scrollView.contentSize.width - self.xScaleLength / 2, 0, self.xScaleLength / 2, GraphTotalHeight);
+            [_scrollView addSubview:cover];
+        } else { //中间的点
+            cover.frame = CGRectMake(self.xScaleLength * i, 0, self.xScaleLength, GraphTotalHeight);
+            [_scrollView addSubview:cover];
+        }
+        
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(coverTapped:)];
+        [cover addGestureRecognizer:tap];
+    }
+}
+
+- (void)coverTapped:(UITapGestureRecognizer *)tap
+{
+    NSInteger index = tap.view.tag - BaseCoverTag;
     
+    [self highlightCurrentXTitleWithIndex:index];
+    
+    CGPoint targetPoint = [[self.targetLine.pointArray objectAtIndex:index] CGPointValue];
+    CGPoint actualPoint = [[self.actualLine.pointArray objectAtIndex:index] CGPointValue];
+    
+    /**
+     *  圆环及浮层
+     */
+    
+    if (self.lastSelectIndex != -1) { //已经显示了的
+        GraphDot *dot = (GraphDot *)[_scrollView viewWithTag:BaseDotTag + self.lastSelectIndex];
+        [dot removeFromSuperview];
+        GraphPopView *pop = (GraphPopView *)[_scrollView viewWithTag:BasePopTag + self.lastSelectIndex];
+        [pop removeFromSuperview];
+    }
+    
+    CGPoint currentPoint = [tap locationInView:tap.view];
+    
+    //分别计算出当前点跟目标折线，实际折线差值的绝对值，哪个小，就在哪个上面画
+    CGFloat targetAbs = fabs(currentPoint.y - targetPoint.y);
+    CGFloat actualAbs = fabs(currentPoint.y - actualPoint.y);
+    
+    if (targetAbs < actualAbs || targetAbs == actualAbs) { //如果重合的话 也画在目标折线
+        [self createDotPopComparePopWithIndex:index point:targetPoint color:LineBlueColor string:[self.targetValues objectAtIndex:index] lineView:self.targetLine];
+    } else {
+        UIColor *color = _isDeal ? LinePurpleColor : LineOrangeColor;
+        [self createDotPopComparePopWithIndex:index point:actualPoint color:color string:[self.actualValues objectAtIndex:index] lineView:self.actualLine];
+    }
+    self.lastSelectIndex = index;
+}
+
+- (void)createDotPopComparePopWithIndex:(NSInteger)index
+                                  point:(CGPoint)point
+                                  color:(UIColor *)color
+                                 string:(NSString *)string
+                               lineView:(GraphLine *)lineView
+{
+    GraphDot *dot = [[GraphDot alloc] initWithCenter:point radius:DotRadius borderColor:color];
+    dot.tag = BaseDotTag + index;
+    dot.dotBorderWidth = 1.5;
+    [_scrollView addSubview:dot];
+    [dot performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1];
+    
+    GraphPopView *pop = [[GraphPopView alloc] initWithFrame:CGRectZero bgColor:color string:string];
+    pop.center = point;
+    
+    CGFloat popY = point.y + GapBetweenDotAndPop;
+    if (popY + pop.height > GraphTotalHeight - GraphXBottomHeight) { //如果pop底端超过x坐标 就把popview放在dot上面
+        popY = popY - 3 * GapBetweenDotAndPop;
+    }
+    pop.top = popY;
+    pop.tag = index + BasePopTag;
+    [_scrollView addSubview:pop];
+    [pop performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:1];
+}
+
+//高亮当前的x轴
+- (void)highlightCurrentXTitleWithIndex:(NSInteger)index
+{
     for (int i = 0; i < self.xTitleArray.count; i++) {
         UILabel *label = (UILabel *)[self.bottomView viewWithTag:i + BaseXAxisTag];
         if (i == index) {
