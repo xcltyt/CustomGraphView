@@ -3,7 +3,7 @@
 //  mworkingHaier
 //
 //  Created by Saborka on 27/12/2016.
-//  Chttps://github.com/Saborka/CustomGraphView
+//  https://github.com/sensejump/CustomGraphView
 //
 
 #import <UIKit/UIKit.h>

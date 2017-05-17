@@ -3,7 +3,7 @@
 //  mworkingHaier
 //
 //  Created by Saborka on 26/12/2016.
-//  https://github.com/Saborka/CustomGraphView
+//  https://github.com/sensejump/CustomGraphView
 //
 
 #import "GraphDot.h"
